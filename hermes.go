@@ -2,9 +2,10 @@ package hermes
 
 import (
 	"bytes"
+	"html/template"
+
 	"github.com/Masterminds/sprig"
 	"github.com/imdario/mergo"
-	"html/template"
 )
 
 // Hermes is an instance of the hermes email generator
@@ -55,6 +56,7 @@ type Body struct {
 	Greeting   string   // Greeting for the contacted person (default to 'Hi')
 	Signature  string   // Signature for the contacted person (default to 'Yours truly')
 	Title      string   // Title replaces the greeting+name when set
+	Data       map[string]interface{}
 }
 
 // Entry is a simple entry of a map
